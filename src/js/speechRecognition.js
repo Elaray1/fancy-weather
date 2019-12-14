@@ -1,6 +1,6 @@
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+window.onload = function () {
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-window.onload = () => {
   const searchInput = document.getElementById('search-input');
 
   const recognition = new SpeechRecognition();
