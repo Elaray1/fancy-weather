@@ -230,6 +230,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       });
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
+      recognition.stop();
     }
     isMicro = !isMicro;
   });
