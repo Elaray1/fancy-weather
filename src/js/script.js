@@ -39,6 +39,9 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   const searchBtn = document.getElementById('search-btn');
   const languageBlock = document.querySelector('select');
   const microfonImg = document.getElementById('microfon-img');
+  const recognition = new webkitSpeechRecognition();
+  let isMicro = false;
+  recognition.interimResults = true;
   let [lng, lat] = await getCoordinates(await getUserCity());
 
   languageBlock.value = language;
@@ -150,7 +153,12 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   showOnTheMap();
   document.querySelector('.lon').innerText = `${longitude}: ${convertDDToDMS(lng)}`;
   document.querySelector('.lat').innerText = `${latitude}: ${convertDDToDMS(lat)}`;
+
   searchBtn.addEventListener('click', async () => {
+    if (isMicro) {
+      microfonImg.setAttribute('src', 'assets/micrrofon.png');
+      recognition.stop();
+    }
     if (await getCoordinates(searchInput.value) === -1) {
       searchInput.value = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
       return;
@@ -211,9 +219,6 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     searchInput.style.color = changeColorInput.value;
   });
 
-  const recognition = new webkitSpeechRecognition();
-  recognition.interimResults = true;
-  let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
     isMicro = !isMicro;
