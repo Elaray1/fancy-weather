@@ -216,23 +216,25 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
-    console.log(isMicro);
+    isMicro = !isMicro;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
       recognition.start();
-      recognition.addEventListener('result', (e) => {
-        const transcript = Array.from(e.results)
-          .map((result) => result[0])
-          .map((result) => result.transcript)
-          .join('');
-        searchInput.value = transcript;
-        console.log(transcript);
-        recognition.stop();
-      });
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
     }
-    isMicro = !isMicro;
+  });
+
+  recognition.addEventListener('result', (e) => {
+    if (isMicro) {
+      const transcript = Array.from(e.results)
+        .map((result) => result[0])
+        .map((result) => result.transcript)
+        .join('');
+      searchInput.value = transcript;
+      console.log(transcript);
+      recognition.stop();
+    }
   });
 
   recognition.addEventListener('end', recognition.start);
