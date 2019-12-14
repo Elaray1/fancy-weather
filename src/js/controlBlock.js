@@ -30,7 +30,7 @@ export const controlBlock = `<div class="control-block">
     <div class="control-block_search">
       <div class="search-input">
         <input id="search-input" type="text">
-        <img src="assets/micrrofon.png" width="14.5" height="17" alt="micro">
+        <img id="microfon-img" src="assets/micrrofon.png" width="14.5" height="17" alt="micro">
       </div>
       <div id="search-btn" class="search-btn">
         <p>SEARCH</p>
