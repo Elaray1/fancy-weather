@@ -1,0 +1,535 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+select:focus,
+select:hover,
+option:hover,
+option:focus {
+  border:none;
+  outline:none;
+  border:transparent;
+}
+/* The end of reseting CSS */
+
+
+/* Control Block */
+.control-block_languages {
+  width: 70px;
+  height: 45px;
+  border: none;
+  background: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-align-last: center;
+  margin: 0 10px;
+}
+
+.control-block_choose-degrees input[type="radio"] {
+  display: none;
+}
+
+.labels-for-degrees-inputs div {
+  display: flex;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(76, 82, 85, 0.4);
+}
+
+.celsius {
+  border-radius: 5px 0 0 5px;
+}
+
+.fahrenheit {
+  border-radius: 0 5px 5px 0;
+}
+
+.labels-for-degrees-inputs div p {
+  margin: auto;
+}
+
+.labels-for-degrees-inputs {
+  display: flex;
+}
+
+input[type="radio"]:checked + label div {
+  background: rgba(174, 181, 185, 0.5);
+}
+
+.control-block_buttons {
+  display: flex;
+}
+
+body {
+	background: url("assets/kosmicheskaya-mirovozzrenie.jpg");
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.search-input {
+	display: inline-flex;
+	padding: 15px;
+	background: rgba(76, 82, 85, 0.4);
+	border: 1px solid rgba(228, 227, 227, 0.2);
+}
+
+#search-input {
+	border: 0;
+	width: 250px;
+	background: transparent;
+	outline: none;
+	color: white;
+}
+
+.control-block_search {
+	display: flex;
+}
+
+.search-btn {
+	display: flex;
+	align-items: center;
+	padding: 15px 20px;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	animation-name: rainbowcolor;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+}
+
+.search-btn:active {
+	animation-name: activebtn;
+	animation-duration: 3s;
+}
+
+.control-block {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-wrapper {
+	max-width: 1260px;
+	padding: 40px 20px 100px;
+	margin: 0 auto;
+}
+
+#refresh-bg {
+	cursor: pointer;
+	animation-name: coup;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+.weather-for-today h2 {
+	font-weight: bold;
+	font-size: 44px;
+	line-height: 55px;
+	text-transform: uppercase;
+}
+
+.change-color {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+	margin: auto 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  background: #fff;
+  width: 26px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+  cursor: inherit;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+input[type=color]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+}
+
+input[type=color]::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+  height: 140px;
+}
+
+.circle {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: inherit;
+}
+
+.weather-for-today h4 {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.temperature {
+	display: flex;
+	margin-top: 30px;
+	animation: pulse 20s linear infinite;
+}
+
+.temperature p {
+	font-weight: bold;
+	font-size: 230px;
+	line-height: 370px;
+}
+
+.weather-for-today_weather-description-block {
+	display: flex;
+	justify-content: space-between;
+}
+
+.weather-description {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+
+.weather-for-3-days {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.weather-for-3-days_element p {
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+.temperature-next-days p {
+	font-weight: 600;
+	font-size: 80px;
+	line-height: 100px;
+}
+
+.temperature-next-days {
+	display: flex;
+	justify-content: space-between;
+}
+
+.temperature-next-days img {
+	position: relative;
+	top: 0;
+}
+
+#map {
+		width: 375px;
+		height: 375px;
+}
+
+.weather-and-map {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+}
+
+.map-container p {
+	text-align: right;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.lon {
+	margin-top: 10px;
+}
+
+.temperature img {
+	width: 150px;
+	height: 150px;
+}
+
+@media (max-width: 1100px) {
+	.weather-description,
+	.map-container p {
+		font-size: 17px;
+	}
+	#map {
+		width: 290px;
+		height: 290px;
+	}
+	.temperature img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (max-width: 900px) {
+	.temperature p {
+    font-size: 170px;
+	}
+
+	.weather-for-today_weather-description-block {
+		justify-content: flex-start;
+	}
+
+	.weather-for-3-days_element p {
+		font-size: 17px;
+	}
+
+	.temperature-next-days img {
+		width: 80px;
+		height: 80px;
+	}
+
+	.temperature-next-days p {
+		font-size: 60px;
+	}
+
+	.weather-and-map {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.map-container {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 700px) {
+	#search-input {
+		width: 150px;
+	}
+
+	#refresh-bg,
+	.control-block_languages,
+	.labels-for-degrees-inputs div,
+	.control-block_search {
+		height: 30px;
+	}
+
+	#refresh-bg {
+		width: 30px;
+	}
+
+	.search-input {
+		padding: 6px;
+	}
+
+	#search-btn p {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 550px) {
+	.control-block {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.control-block_search {
+		margin-top: 25px;
+	}
+
+	.weather-for-today h2,
+	.weather-for-today h4 {
+		text-align: center;
+	}
+
+	.temperature p {
+    font-size: 100px;
+		line-height: 200px;
+	}
+
+	.temperature img {
+    width: 80px;
+    height: 80px;
+	}
+
+	.weather-for-today h2 {
+		font-size: 30px;
+	}
+
+	.weather-for-today h4 {
+		font-size: 19px;
+	}
+
+	.weather-for-today_weather-description-block {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.weather-description-params {
+		margin-bottom: 25px;
+	}
+
+	.weather-description {
+		font-size: 15px;
+	}
+
+	.weather-for-3-days_element-2 {
+		margin: 0 20px;
+	}
+}
+
+
+@keyframes rainbowcolor {
+	from {
+		background: #DC143C;
+	}
+
+	14.3% {
+		background: #FF8C00;
+	}
+
+	28.6% {
+		background: #FFD700;
+	}
+
+	42.9% {
+		background: #00FF00;
+	}
+
+	57.2% {
+		background: #1E90FF;
+	}
+
+	71.5% {
+		background: #191970;
+	}
+
+	85.8% {
+		background: #800080;
+	}
+
+	to {
+		background: #FF00FF;
+	}
+}
+
+@keyframes activebtn {
+	from {
+		background:linear-gradient(bottom,#f58f99,#bf1e2e);
+		background:-webkit-linear-gradient(bottom, #f58f99 5%,#bf1e2e);
+		background:-o-linear-gradient(bottom,#f58f99,#bf1e2e);
+		background:-moz-linear-gradient(bottom,#f58f99,#bf1e2e);
+		background:-ms-linear-gradient(bottom,#f58f99,#bf1e2e);
+	}
+
+	50% {
+		background:linear-gradient(bottom,#f4da71,#cca509);
+	  background:-webkit-linear-gradient(bottom, #f4da71 5%,#cca509);
+	  background:-o-linear-gradient(bottom,#f4da71,#cca509);
+	  background:-moz-linear-gradient(bottom,#f4da71,#cca509);
+	  background:-ms-linear-gradient(bottom,#f4da71,#cca509);
+	}
+
+	to {
+		background:linear-gradient(bottom,#9ACD32,#228B22);
+		background:-webkit-linear-gradient(bottom, #9ACD32 5%,#228B22);
+		background:-o-linear-gradient(bottom,#9ACD32,#228B22);
+		background:-moz-linear-gradient(bottom,#9ACD32,#228B22);
+		background:-ms-linear-gradient(bottom,#9ACD32,#228B22);
+	}
+}
+
+@keyframes coup {
+	to {
+		transform: rotate(360deg);
+		transition: all 5s ease;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform:scale(0.5);
+		-webkit-transform:scale(0.5);
+		-moz-transform:scale(0.5);
+		-o-transform:scale(0.5);
+	}
+	50% {
+		transform:scale(1);
+		-webkit-transform:scale(1);
+		-moz-transform:scale(1);
+		-o-transform:scale(1);
+	}
+	100%{
+		transform:scale(0.5);
+		-webkit-transform:scale(0.5);
+		-moz-transform:scale(0.5);
+		-o-transform:scale(0.5);
+	}
+}
