@@ -39,7 +39,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   const searchBtn = document.getElementById('search-btn');
   const languageBlock = document.querySelector('select');
   const microfonImg = document.getElementById('microfon-img');
-  let recognition = new webkitSpeechRecognition();
+  const recognition = new webkitSpeechRecognition();
   let isMicro = false;
   recognition.interimResults = true;
   let [lng, lat] = await getCoordinates(await getUserCity());
@@ -224,12 +224,10 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     isMicro = !isMicro;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
-      recognition = true;
       recognition.start();
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
       recognition.abort();
-      recognition = false;
     }
   });
 
@@ -240,7 +238,6 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       .join('');
     if (isMicro) {
       searchInput.value = transcript;
-      recognition = false;
     }
   });
 
