@@ -216,6 +216,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
+    console.log(isMicro);
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
       recognition.start();
