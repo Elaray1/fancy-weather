@@ -211,7 +211,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     searchInput.style.color = changeColorInput.value;
   });
 
-  const recognition = new WebkitSpeechRecognition();
+  const recognition = new webkitSpeechRecognition();
   recognition.interimResults = true;
   let isMicro = false;
 
