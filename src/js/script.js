@@ -211,8 +211,6 @@ window.onload = async function () {
     searchInput.style.color = changeColorInput.value;
   });
 
-  recognition.addEventListener('end', recognition.start);
-
   window.addEventListener('beforeunload', () => {
     localStorage.setItem('degreesFormat', degreesFormat);
     localStorage.setItem('language', language);

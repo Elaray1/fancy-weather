@@ -1,5 +1,5 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new webkitSpeechRecognition();
+const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 let isMicro = false;
 const microfonImg = document.getElementById('microfon-img');
@@ -22,3 +22,5 @@ microfonImg.addEventListener('click', () => {
   }
   isMicro = !isMicro;
 });
+
+recognition.addEventListener('end', recognition.start);
