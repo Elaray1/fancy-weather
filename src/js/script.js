@@ -37,7 +37,8 @@ window.onload = async function () {
   const searchInput = document.getElementById('search-input');
   const searchBtn = document.getElementById('search-btn');
   const languageBlock = document.querySelector('select');
-  const microfonImg = document.getElementById('microfon-img')
+  const microfonImg = document.getElementById('microfon-img');
+  console.log(microfonImg);
   let [lng, lat] = await getCoordinates(await getUserCity());
 
   languageBlock.value = language;
