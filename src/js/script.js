@@ -220,11 +220,12 @@ window.onload = async function () {
       .map((result) => result[0])
       .map((result) => result.transcript)
       .join('');
+    console.log(transcript);
 
     searchInput.value = transcript;
   });
 
-  // recognition.addEventListener('end', recognition.start);
+  recognition.addEventListener('end', recognition.start);
 
   window.addEventListener('beforeunload', () => {
     localStorage.setItem('degreesFormat', degreesFormat);
