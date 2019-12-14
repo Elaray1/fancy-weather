@@ -224,7 +224,7 @@ window.onload = async function () {
     searchInput.value = transcript;
   });
 
-  recognition.addEventListener('end', recognition.start);
+  // recognition.addEventListener('end', recognition.start);
 
   window.addEventListener('beforeunload', () => {
     localStorage.setItem('degreesFormat', degreesFormat);
