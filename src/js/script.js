@@ -229,7 +229,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
         console.log(transcript);
       });
     } else {
-      microfonImg.setAttribute('src', 'assets/miccrofon.png');
+      microfonImg.setAttribute('src', 'assets/micrrofon.png');
     }
     isMicro = !isMicro;
   });
