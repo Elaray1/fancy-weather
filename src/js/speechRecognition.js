@@ -1,10 +1,8 @@
 window.onload = function () {
-  const recognition = new webkitSpeechRecognition();
-  recognition.interimResults = true;
-  let isMicro = false;
-
-
   microfonImg.addEventListener('click', () => {
+    const recognition = new webkitSpeechRecognition();
+    recognition.interimResults = true;
+    let isMicro = false;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
       isMicro = !isMicro;
