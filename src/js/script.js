@@ -211,14 +211,13 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     searchInput.style.color = changeColorInput.value;
   });
 
-  const recognition = new webkitSpeechRecognition();
+  const recognition = new WebkitSpeechRecognition();
   recognition.interimResults = true;
   let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
-      isMicro = !isMicro;
       recognition.start();
       recognition.addEventListener('result', (e) => {
         const transcript = Array.from(e.results)
