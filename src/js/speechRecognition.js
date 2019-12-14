@@ -5,7 +5,6 @@ recognition.interimResults = true;
 
 recognition.start();
 
-recognition.addEventListener('results', (e) => {
+recognition.addEventListener('result', (e) => {
   console.log(e);
 });
-console.log(2);
