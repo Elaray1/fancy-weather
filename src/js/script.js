@@ -222,18 +222,17 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       recognition.start();
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
+      recognition.stop();
     }
   });
 
   recognition.addEventListener('result', (e) => {
+    const transcript = Array.from(e.results)
+      .map((result) => result[0])
+      .map((result) => result.transcript)
+      .join('');
     if (isMicro) {
-      const transcript = Array.from(e.results)
-        .map((result) => result[0])
-        .map((result) => result.transcript)
-        .join('');
       searchInput.value = transcript;
-      console.log(transcript);
-      recognition.stop();
     }
   });
 
