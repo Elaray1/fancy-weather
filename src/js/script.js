@@ -212,10 +212,10 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   });
 
   const recognition = new webkitSpeechRecognition();
+  let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
     recognition.interimResults = true;
-    let isMicro = false;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
       isMicro = !isMicro;
