@@ -214,6 +214,7 @@ window.onload = async function () {
   recognition.interimResults = true;
 
   recognition.start();
+  console.log(1);
 
   recognition.addEventListener('result', (e) => {
     const transcript = Array.from(e.results)
