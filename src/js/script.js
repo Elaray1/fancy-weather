@@ -212,10 +212,10 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   });
 
   const recognition = new webkitSpeechRecognition();
+  recognition.interimResults = true;
   let isMicro = false;
 
   microfonImg.addEventListener('click', () => {
-    recognition.interimResults = true;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
       isMicro = !isMicro;
@@ -227,10 +227,10 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
           .join('');
         searchInput.value = transcript;
         console.log(transcript);
+        recognition.stop();
       });
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
-      recognition.stop();
     }
     isMicro = !isMicro;
   });
