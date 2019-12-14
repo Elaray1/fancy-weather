@@ -214,7 +214,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     getBgImage(city);
   });
   changeColorInput.addEventListener('change', () => {
-    document.querySelector('body').setAttribute('style', `color:${changeColorInput.value} !important`);
+    document.querySelector('body').style.color = changeColorInput.value;
     languageBlock.style.color = changeColorInput.value;
     searchInput.style.color = changeColorInput.value;
   });
