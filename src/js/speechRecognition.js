@@ -4,7 +4,7 @@ recognition.interimResults = true;
 let isMicro = false;
 
 
-microfonImg.addEventListener('click', () => {
+document.querySelector('input[type="text"]').addEventListener('click', () => {
   if (isMicro) {
     microfonImg.setAttribute('src', 'assets/micro_active.png');
     isMicro = !isMicro;

@@ -7,7 +7,6 @@ import { weatherFor3DaysBlock } from './weatherFor3Days';
 import { mapBlock } from './map';
 import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays';
 
-const microfonImg = document.getElementById('microfon-img');
 window.onload = async function () {
   let language;
   if (localStorage.getItem('language') !== null) {
@@ -38,6 +37,7 @@ window.onload = async function () {
   const searchInput = document.getElementById('search-input');
   const searchBtn = document.getElementById('search-btn');
   const languageBlock = document.querySelector('select');
+  const microfonImg = document.getElementById('microfon-img');
   let [lng, lat] = await getCoordinates(await getUserCity());
 
   languageBlock.value = language;
