@@ -219,12 +219,11 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     searchInput.style.color = changeColorInput.value;
   });
 
-
+  recognition.start();
   microfonImg.addEventListener('click', () => {
     isMicro = !isMicro;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
-      recognition.start();
     } else {
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
       recognition.stop();
