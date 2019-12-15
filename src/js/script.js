@@ -236,6 +236,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       .map((result) => result[0])
       .map((result) => result.transcript)
       .join('');
+      console.log(transcript);
     if (isMicro) {
       searchInput.value = transcript;
     }
