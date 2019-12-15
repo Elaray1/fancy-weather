@@ -67,7 +67,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       elem.lastElementChild.lastElementChild.setAttribute('src', `http://openweathermap.org/img/wn/${currentTemperature[i][1]}@2x.png`);
     }
   };
-  // getBgImage();
+  getBgImage();
   translateText('Minsk, Belarus', 'ru');
   setTemperatureFor3Days();
   let weatherDescription;
