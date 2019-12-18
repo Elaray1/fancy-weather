@@ -27,13 +27,13 @@ export const controlBlock = `<div class="control-block">
         <div class="circle"></div>
       </label>
     </div>
-    <div class="control-block_search">
-      <div class="search-input">
-        <input id="search-input" type="text">
-        <img id="microfon-img" src="assets/micrrofon.png" width="14.5" height="17" alt="micro">
-      </div>
-      <div id="search-btn" class="search-btn">
-        <p>SEARCH</p>
-      </div>
+    <form>
+        <div class="control-block_search">
+          <div class="search-input">
+            <input id="search-input" type="text">
+            <img id="microfon-img" src="assets/micrrofon.png" width="14.5" height="17" alt="micro">
+          </div>
+          <input type="button" id="search-btn" class="search-btn" value="search">
+    </form>
     </div>
   </div>`;
