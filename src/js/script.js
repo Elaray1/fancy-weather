@@ -40,7 +40,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   const languageBlock = document.querySelector('select');
   const microfonImg = document.getElementById('microfon-img');
   const recognition = new webkitSpeechRecognition();
-  let isMicro = true;
+  let isMicro = false;
   recognition.interimResults = true;
   let [lng, lat] = await getCoordinates(await getUserCity());
 
