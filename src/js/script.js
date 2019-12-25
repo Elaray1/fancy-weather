@@ -222,7 +222,6 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   recognition.start();
 
   microfonImg.addEventListener('click', () => {
-    console.log(isMicro);
     isMicro = !isMicro;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
@@ -232,6 +231,8 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     }
   });
 
+  console.log(123);
+
   recognition.addEventListener('result', async (e) => {
     const transcript = Array.from(e.results)
       .map((result) => result[0])
@@ -239,6 +240,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       .join('');
     console.log(transcript);
     if (isMicro) {
+      console.log(transcript)
       searchInput.value = transcript;
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
       recognition.stop();
