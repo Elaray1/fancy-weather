@@ -67,7 +67,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       elem.lastElementChild.lastElementChild.setAttribute('src', `http://openweathermap.org/img/wn/${currentTemperature[i][1]}@2x.png`);
     }
   };
-  // getBgImage();
+  getBgImage();
   translateText('Minsk, Belarus', 'ru');
   setTemperatureFor3Days();
   let weatherDescription;
@@ -231,13 +231,41 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
     }
   });
 
-  recognition.addEventListener('result', (e) => {
+  recognition.addEventListener('result', async (e) => {
     const transcript = Array.from(e.results)
       .map((result) => result[0])
       .map((result) => result.transcript)
       .join('');
     if (isMicro) {
       searchInput.value = transcript;
+      isMicro = !isMicro;
+      microfonImg.setAttribute('src', 'assets/micrrofon.png');
+      recognition.abort();
+      if (await getCoordinates(searchInput.value) === -1) {
+        searchInput.value = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
+        return;
+      }
+      [lng, lat] = await getCoordinates(searchInput.value);
+      searchInput.value = '';
+      showOnTheMap(lng, lat);
+      document.querySelector('.lon').innerText = `${longitude}: ${convertDDToDMS(lng)}`;
+      document.querySelector('.lat').innerText = `${latitude}: ${convertDDToDMS(lat)}`;
+      locationArray = await getUserLocation(lng, lat);
+      city = locationArray[0];
+      countryCode = locationArray[1];
+      currentTimeStr.innerText = await getCurrentTime(language, city);
+      getBgImage(city);
+      currentTemperature = await getCityTemperature(city);
+      locationStr.innerText = `${city}, ${fullCountryNames[countryCode]}`;
+      if (degreesFormat === 'celsius') {
+        temperatureForToday.innerText = `${currentTemperature[0][0]}°`;
+      } else {
+        temperatureForToday.innerText = `${Math.round((9 / 5) * currentTemperature[0][0] + 32)}°`;
+      }
+      temperaturForTodayImg.setAttribute('src', `http://openweathermap.org/img/wn/${currentTemperature[0][1]}@2x.png`);
+      await setweatherDescription(city);
+      setTemperatureFor3Days();
+      switchSiteLanguage();
     }
   });
 
