@@ -234,6 +234,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   console.log(123);
 
   recognition.addEventListener('result', async (e) => {
+    console.log(e);
     const transcript = Array.from(e.results)
       .map((result) => result[0])
       .map((result) => result.transcript)
@@ -271,6 +272,8 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       setTemperatureFor3Days();
       switchSiteLanguage();
       isMicro = false;
+      microfonImg.setAttribute('src', 'assets/micrrofon.png');
+      recognition.abort();
     }
   });
 
