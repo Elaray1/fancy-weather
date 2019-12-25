@@ -237,7 +237,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       .map((result) => result[0])
       .map((result) => result.transcript)
       .join('');
-    if (isMicro) {
+    if (isMicro && transcript.length >= 5) {
       searchInput.value = transcript;
       isMicro = !isMicro;
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
