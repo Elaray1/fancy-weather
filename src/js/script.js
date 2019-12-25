@@ -160,7 +160,8 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       recognition.stop();
     }
     if (await getCoordinates(searchInput.value) === -1) {
-      searchInput.value = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
+      const a = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
+      alert(a);
       return;
     }
     [lng, lat] = await getCoordinates(searchInput.value);
@@ -242,7 +243,8 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
       recognition.abort();
       if (await getCoordinates(searchInput.value) === -1) {
-        searchInput.value = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
+        const a = language === 'en' ? 'Incorrect city name' : language === 'ru' ? 'Неправильное название города' : 'Няправільная назва горада';
+        alert(a);
         return;
       }
       [lng, lat] = await getCoordinates(searchInput.value);
