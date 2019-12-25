@@ -222,6 +222,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
   recognition.start();
 
   microfonImg.addEventListener('click', () => {
+    console.log(isMicro);
     isMicro = !isMicro;
     if (isMicro) {
       microfonImg.setAttribute('src', 'assets/micro_active.png');
@@ -236,6 +237,7 @@ import { weatherArrayEng, weatherArrayRu, weatherArrayBe } from './weatherArrays
       .map((result) => result[0])
       .map((result) => result.transcript)
       .join('');
+    console.log(transcript);
     if (isMicro) {
       searchInput.value = transcript;
       microfonImg.setAttribute('src', 'assets/micrrofon.png');
